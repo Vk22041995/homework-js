@@ -8,66 +8,76 @@
     то виводити в консоль текст "Ми йдемо в інше кафе"
     (Змінні типу інтеджер містять кількість продуктів в наявності у вигляді вхідних даних)*/
 
-    let hamburger = 1;
-    let fries = 4;
-    
-    if (hamburger>=1 && fries>=4){
-        console.log('Ми поїли')
-    } else {
-        console.log('Ми йдемо в інше кафе')
+    function cafe (hamburger, fries) {
+        if (hamburger>=1 && fries>=4){
+            return('Ми поїли')
+        } else {
+            return('Ми йдемо в інше кафе')
+        }  
     }
+
+    console.log(cafe(1, 4));
 
 /*
 2.  Напишіть умовну конструкцію if, що перевіряє, чи знаходиться значення ціни товару між 1000 та 1900 включно.
     Результат виводити в консоль.*/
 
-let price = 1000;
-
-if (price>=1000 && price<=1900){
-    console.log(true)  
-} else {
-    console.log(false)   
+function priceCalculate (price) {
+    if (price>=1000 && price<=1900){
+        return(true)  
+    } else {
+        return(false)   
+    }
 }
+
+console.log(priceCalculate(1000));
+
 
 /*
 3.  Напишіть конструкцію if, щоб перевіряє, чи значення ціни товару не знаходиться між 1000 та 1900 включно.
     Реалізуйте два варіанти, один з оператором НЕ !, а інший без цього оператора.
     Результат виводити в консоль.*/
 
-    let goodsPrice = 1000;
-
-    if (goodsPrice<1000 && goodsPrice>1900){
-        console.log(true)  
-    } else {
-        console.log(false) 
+    function pricePositive (priceValue) {
+        if (priceValue<1000 && priceValue>1900){
+            return(true)  
+        } else {
+            return(false) 
+        }
     }
+    
+    console.log(pricePositive(1000));
 
 
-
-    let productPrice = 1000;
-
-    if (productPrice>=1000 && productPrice<=1900) {
-        console.log(!true)  
-    } else {
-        console.log(!false) 
+    function priceNegative (productPrice) {
+        if (productPrice>=1000 && productPrice<=1900) {
+            return(!true)  
+        } else {
+            return(!false) 
+        } 
     }
+    
+    console.log(priceNegative(900));
 
 
 /*
 4.  За номером пори року вивести назву цієї пори року використовуючи оператор if-else-if
     Результат виводити в консоль.*/
 
-let timeOfYear = 3;
+const seasons = (timeOfYear) => {
+    if (timeOfYear == 1){
+        return("Зима")
+    } else if (timeOfYear == 2){
+        return("Весна")
+    } else if (timeOfYear == 3){
+        return("Літо")
+    } else if (timeOfYear == 4){
+        return("Осінь")
+    };
+} 
 
-if (timeOfYear == 1){
-    console.log("Зима")
-} else if (timeOfYear == 2){
-    console.log("Весна")
-} else if (timeOfYear == 3){
-    console.log("Літо")
-} else if (timeOfYear == 4){
-    console.log("Осінь")
-};
+console.log(seasons(3));
+
 
 /*
 5.  Задано 3 числа (a, b, c), які не рівні між собою.
@@ -76,97 +86,95 @@ if (timeOfYear == 1){
     Використати вкладені оператори if
     Результат виводити в консоль.*/
 
-
-    let a = 5;
-    let b = 2;
-    let c = 8;
-    
-    if (a > b) {
-      if (b > c) {
-        console.log(b);
-      } else if (a > c) {
-        console.log(c);
-      } else {
-        console.log(a);
-      }
-    } else {
-      if (a > c) {
-        console.log(a);
-      } else if (b > c) {
-        console.log(c);
-      } else {
-        console.log(b);
-      }
+    function mediumNumber (a, b, c) {
+        if (a > b) {
+            if (b > c) {
+              return(b);
+            } else if (a > c) {
+              return(c);
+            } else {
+              return(a);
+            }
+          } else {
+            if (a > c) {
+              return(a);
+            } else if (b > c) {
+              return(c);
+            } else {
+              return(b);
+            }
+          }
     }
+
+    console.log(mediumNumber(3, 17, 9));
+
 
 /*
 6.  Задано номер дня тижня.
     За заданим номером вивести назву дня тижня використовуючи switch.
     Результат виводити в консоль.*/
 
-let dayOfWeek = 4;
-
-switch(dayOfWeek){
-    case 1: 
-        console.log("Понеділок");
-        break;
-    case 2: 
-        console.log("Вівторок");
-        break;
-    case 3: 
-        console.log("Середа");
-        break;
-    case 4: 
-        console.log("Четвер");
-        break;  
-    case 5: 
-        console.log("П'ятниця");
-        break; 
-    case 6: 
-        console.log("Субота");
-        break; 
-    case 7: 
-        console.log("Неділя");
-        break; 
+function daily (dayOfWeek) {
+    switch(dayOfWeek){
+        case 1: 
+            return("Понеділок");
+            break;
+        case 2: 
+            return("Вівторок");
+            break;
+        case 3: 
+            return("Середа");
+            break;
+        case 4: 
+            return("Четвер");
+            break;  
+        case 5: 
+            return("П'ятниця");
+            break; 
+        case 6: 
+            return("Субота");
+            break; 
+        case 7: 
+            return("Неділя");
+            break; 
+    }
 }
+
+console.log(daily(3));
+
 
 /*
 7.  За допомогою switch реалізуйте обчислення виразу, передаючи у switch, як параметр, символ математичної операції.
     Математичні операції для обчислення: "+", "-", "*", "/".
     Результат виводити в консоль.*/
 
-    let symbol;
-    let numberOne;
-    let numberTwo;
-
-    switch(symbol){
-        case "+": 
-            console.log(numberOne + numberTwo);
-            break;
-        case "-": 
-            console.log(numberOne - numberTwo);
-            break;
-        case "*": 
-            console.log(numberOne * numberTwo);
-            break;
-        case "/": 
-            console.log(numberOne / numberTwo);
-            break;  
+function calculator (numberOne, symbol, numberTwo) {
+        switch(symbol){
+            case "+": 
+                return(numberOne + numberTwo);
+                break;
+            case "-": 
+                return(numberOne - numberTwo);
+                break;
+            case "*": 
+                return(numberOne * numberTwo);
+                break;
+            case "/": 
+                return(numberOne / numberTwo);
+                break;  
+        }
     }
+
+    console.log(calculator(5, "*", 7));
+
+
 
 /*
 8.*  Використовуючи властивості рядків (тип string), та регулярний вираз (regular expression) видалити голосні букви зі слова.*/
 
-let string = "владислав";
+function raplaceVowels (string) {
+    let noVovels = string.replace(/[аеєиіїоуюя]/gi, "");
+    return(noVovels);
+}
 
-let noVovels = string.replace(/[аеєиіїоуюя]/gi, "");
-
-console.log(noVovels);
-
-/*
-9.*  Використовуючи оператор if реалізувати логіку переводу метрів в кілометри,
-    так щоб в консоль виводився результат обчислень з правильним закінченням.
-    Наприклад: 1000 метрів це 1 кілометр;  32 метри це 0,032 кілометра і т.д.
-
-    Підказка(https://ukr-lifehacks.ed-era.com/rozdil-9/zvyazok_chislivnykiv)
-*/
+console.log(raplaceVowels("владислав"));
